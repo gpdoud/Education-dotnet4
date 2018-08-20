@@ -18,26 +18,31 @@ namespace Education4 {
 			Class dotnetbc4 = new Class();
 			dotnetbc4.Capacity = 16;
 			dotnetbc4.Code = "DN4";
-			dotnetbc4.Language = "CSharp";
+			dotnetbc4.Language = "CSharpx";
 			dotnetbc4.Name = "Dot Net Boot Camp 4";
 			dotnetbc4.Instructor = danTheMan;
 
 			Student foster = new Student();
 			foster.Absences = 0;
 			foster.ContactInfo = "Call Foster...";
-			foster.FirstJob = DateTime.MinValue;
+			foster.FirstJob = null;
 			foster.Name = "Foster";
 			foster.Class = dotnetbc4;
 
 			Student jj = new Student();
 			jj.Absences = 0;
 			jj.ContactInfo = "Call Jon";
-			jj.FirstJob = DateTime.MinValue;
+			jj.FirstJob = null;
 			jj.Name = "Jonathan";
 			jj.Class = dotnetbc4;
 
 			dotnetbc4.Students.Add(foster);
 			dotnetbc4.Students.Add(jj);
+
+			Assignment asg1 = danTheMan.CreateAssignment("FirstFundamentals assignment", "Fundamentals 12");
+			dotnetbc4.DistributeAssignment(asg1);
+
+
 
 		}
 	}
